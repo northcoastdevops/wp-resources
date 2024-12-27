@@ -1,0 +1,1 @@
+Main dashboard showing memory, disk, and CPU usage with progress bars and warning indicators.

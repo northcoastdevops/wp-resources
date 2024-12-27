@@ -1,0 +1,147 @@
+# Copyright (C) 2024 Lou Grossi
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Resources 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-resources\n"
+"Last-Translator: Lou Grossi\n"
+"Language-Team: ncdLabs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: wp-resources\n"
+
+#: wp-resources.php
+msgid "WP Resources"
+msgstr ""
+
+#: wp-resources.php
+msgid "Settings"
+msgstr ""
+
+#: wp-resources.php
+msgid "Current Usage:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Memory Limit:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Usage:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Free Space:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Total Space:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Load Average:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Not supported on this server"
+msgstr ""
+
+#: wp-resources.php
+msgid "Error loading data"
+msgstr ""
+
+#: wp-resources.php
+msgid "Retrying... (Attempt %1$s of %2$s)"
+msgstr ""
+
+#: wp-resources.php
+msgid "Failed to load data after %s attempts"
+msgstr ""
+
+#: wp-resources.php
+msgid "Enable Warning Sound"
+msgstr ""
+
+#: wp-resources.php
+msgid "Refresh Now"
+msgstr ""
+
+#: wp-resources.php
+msgid "Loading..."
+msgstr ""
+
+#: wp-resources.php
+msgid "Warning thresholds: Memory (80%), Disk (90%), CPU Load (2.0)"
+msgstr ""
+
+#: wp-resources.php
+msgid "Memory Usage"
+msgstr ""
+
+#: wp-resources.php
+msgid "Disk Space"
+msgstr ""
+
+#: wp-resources.php
+msgid "CPU Load"
+msgstr ""
+
+#: wp-resources.php
+msgid "Empty memory limit value"
+msgstr ""
+
+#: wp-resources.php
+msgid "Invalid memory limit value"
+msgstr ""
+
+#: wp-resources.php
+msgid "WP Resources Warning:"
+msgstr ""
+
+#: wp-resources.php
+msgid "Memory usage is at %1$s%% (%2$s of %3$s)"
+msgstr ""
+
+#: wp-resources.php
+msgid "Disk usage is at %s%%"
+msgstr ""
+
+#: wp-resources.php
+msgid "CPU load is high: %s"
+msgstr ""
+
+#: wp-resources.php
+msgid "Settings saved successfully."
+msgstr ""
+
+#: wp-resources.php
+msgid "Error saving settings: %s"
+msgstr ""
+
+#: wp-resources.php
+msgid "Memory Warning Threshold (%)"
+msgstr ""
+
+#: wp-resources.php
+msgid "Warning will show when memory usage exceeds this percentage."
+msgstr ""
+
+#: wp-resources.php
+msgid "Disk Warning Threshold (%)"
+msgstr ""
+
+#: wp-resources.php
+msgid "Warning will show when disk usage exceeds this percentage."
+msgstr ""
+
+#: wp-resources.php
+msgid "CPU Load Warning Threshold"
+msgstr ""
+
+#: wp-resources.php
+msgid "Warning will show when CPU load average exceeds this value. Common values: 1.0 - 4.0"
+msgstr "" 
