@@ -1,66 +1,63 @@
 # WP Resources
 
-A WordPress plugin that monitors system resources like CPU, memory, and disk space.
+A WordPress plugin that provides comprehensive server resource monitoring and alerting.
 
-## Description
+## Features
 
-WP Resources provides real-time monitoring of your WordPress server's vital resources:
-- Memory usage and limits
-- Disk space utilization
-- CPU load average
-
-Features:
-- Visual progress bars with color-coded warnings
-- Customizable warning thresholds
-- Audio alerts for critical resource usage
-- Support for internationalization
-- Real-time updates every 30 seconds
-- Manual refresh option
-- Graceful handling of unsupported features
-
-## Screenshots
-
-1. Main dashboard showing memory, disk, and CPU usage with progress bars and warning indicators.
-2. Settings page for customizing warning thresholds.
-
-## Installation
-
-1. Upload the `wp-resources` directory to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Access WP Resources from the admin menu
-
-## Configuration
-
-1. Navigate to WP Resources > Settings
-2. Customize warning thresholds:
-   - Memory Usage (default: 80%)
-   - Disk Space (default: 90%)
-   - CPU Load (default: 2.0)
+- Real-time monitoring of server resources:
+  - Memory usage and limits
+  - Disk space utilization
+  - CPU load average
+  - Resource warning thresholds
+  - Resource status tracking
+- Alert System:
+  - Visual progress bars with color-coded warnings (normal, warning, critical)
+  - Audio alerts for critical resource usage
+  - Email notifications with customizable frequency (immediate, hourly, daily)
+  - Alert history with filtering and pagination
+- Monitoring Configuration:
+  - Customizable warning and critical thresholds
+  - Configurable resource check schedule (hourly, twice daily, daily)
+  - Automatic updates every minute
+  - Manual refresh option
+- Additional Features:
+  - Full internationalization support
+  - Caching for performance optimization
+  - Graceful handling of unsupported features
+  - Clean, user-friendly interface
 
 ## Requirements
 
 - WordPress 5.0 or higher
 - PHP 7.0 or higher
 
+## Installation
+
+1. Upload the `wp-resources` directory to `/wp-content/plugins/`
+2. Activate through WordPress Plugins menu
+3. Access WP Resources from the admin menu
+
+## Configuration
+
+1. Go to WP Resources > Settings
+2. Set warning thresholds:
+   - Memory Usage (warning: 80%, critical: 90%)
+   - Disk Space (warning: 80%, critical: 90%)
+   - CPU Load (warning: 5.0, critical: 8.0)
+3. Configure email notifications (optional):
+   - Enable/disable notifications
+   - Set recipient email addresses
+   - Choose notification frequency
+   - Select warning levels for notifications
+
 ## Support
 
-For support, please visit: https://ncdlabs.com
-
-## Author
-
-Lou Grossi - ncdLabs
+For support: https://ncdlabs.com
 
 ## License
 
-This plugin is licensed under the GPL v2 or later.
+GPL v2 or later
 
-## Changelog
+## Author
 
-### 1.0.0
-- Initial release
-- Added memory monitoring
-- Added disk space monitoring
-- Added CPU load monitoring
-- Added customizable thresholds
-- Added audio alerts
-- Added internationalization support 
+Lou Grossi - ncdLabs 

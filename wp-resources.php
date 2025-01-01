@@ -581,28 +581,53 @@ class WPResources {
         // Verify nonce and capabilities
         if (!check_ajax_referer('wp_resources_settings', 'nonce', false) || 
             !current_user_can('manage_options')) {
-            wp_send_json_error(__('Unauthorized access', 'wp-resources'));
+            wp_send_json_error(array(
+                'message' => __('Unauthorized access', 'wp-resources')
+            ));
             return;
         }
 
         try {
             $new_options = $this->get_options();
-            $new_options['thresholds'] = array(
-                'memory' => min(100, max(0, intval($_POST['memory_threshold']))),
-                'disk' => min(100, max(0, intval($_POST['disk_threshold']))),
-                'cpu' => max(0, floatval($_POST['cpu_threshold']))
-            );
+            
+            // Validate and save warning levels
+            foreach (self::VALID_RESOURCE_TYPES as $type) {
+                $warning = $type === 'cpu' ? 
+                    max(0, floatval($_POST["{$type}_warning"])) :
+                    min(100, max(0, intval($_POST["{$type}_warning"])));
+                    
+                $critical = $type === 'cpu' ? 
+                    max(0, floatval($_POST["{$type}_critical"])) :
+                    min(100, max(0, intval($_POST["{$type}_critical"])));
+                
+                // Ensure critical is higher than warning
+                if ($critical <= $warning) {
+                    throw new Exception(
+                        sprintf(
+                            __('Critical threshold must be higher than warning threshold for %s', 'wp-resources'),
+                            $type
+                        )
+                    );
+                }
+                
+                $new_options['warning_levels'][$type] = [
+                    'warning' => $warning,
+                    'critical' => $critical
+                ];
+            }
             
             $this->update_options($new_options);
             
             wp_send_json_success(array(
                 'message' => __('Settings saved successfully.', 'wp-resources'),
-                'thresholds' => $new_options['thresholds']
+                'warning_levels' => $new_options['warning_levels']
             ));
         } catch (Exception $e) {
-            wp_send_json_error(sprintf(
-                __('Error saving settings: %s', 'wp-resources'), 
-                $e->getMessage()
+            wp_send_json_error(array(
+                'message' => sprintf(
+                    __('Error saving settings: %s', 'wp-resources'), 
+                    $e->getMessage()
+                )
             ));
         }
     }

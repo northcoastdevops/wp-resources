@@ -45,24 +45,32 @@ jQuery(document).ready(function($) {
             data: {
                 action: 'save_wp_resources_settings',
                 nonce: $('#_wpnonce').val(),
-                memory_threshold: $('input[name="memory_threshold"]').val(),
-                disk_threshold: $('input[name="disk_threshold"]').val(),
-                cpu_threshold: $('input[name="cpu_threshold"]').val()
+                memory_warning: $('input[name="memory_warning"]').val(),
+                memory_critical: $('input[name="memory_critical"]').val(),
+                disk_warning: $('input[name="disk_warning"]').val(),
+                disk_critical: $('input[name="disk_critical"]').val(),
+                cpu_warning: $('input[name="cpu_warning"]').val(),
+                cpu_critical: $('input[name="cpu_critical"]').val()
             },
             success: function(response) {
                 if (response.success) {
                     // Update thresholds in JS
-                    wpResourcesL10n.thresholds = response.data.thresholds;
+                    wpResourcesL10n.warningLevels = response.data.warning_levels;
                     
                     // Show success message
                     const notice = $('<div class="notice notice-success is-dismissible"><p>' + 
-                        wpResourcesL10n.settingsSaved + '</p></div>');
+                        response.data.message + '</p></div>');
                     $('.wrap > h1').after(notice);
                     
                     // Update dashboard if visible
                     if ($('#wp-resources-dashboard').is(':visible')) {
                         updateResources();
                     }
+                } else {
+                    // Show error message
+                    const notice = $('<div class="notice notice-error is-dismissible"><p>' + 
+                        response.data.message + '</p></div>');
+                    $('.wrap > h1').after(notice);
                 }
             }
         });
